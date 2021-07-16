@@ -1,0 +1,40 @@
+class ParkingGarage():
+
+    def __init__(self, tickets = [1,2,3,4,5,6,7,8,9,10], current_ticket = {}, parking_spaces = [1,2,3,4,5,6,7,8,9,10]):
+        self.tickets = tickets
+        self.current_ticket = current_ticket
+        self.parking_spaces = parking_spaces
+
+    def take_ticket(self):
+        self.tickets.pop()
+        show_tickets()
+        
+    
+    def show_tickets(self):
+        print(self.tickets)
+        print(self.current_ticket)
+        print(self.parking_spaces)
+
+    # def pay_4_parking(self):
+
+    # def leave_garage(self):
+
+    def run_garage(self):
+        
+        while True:
+            print("Welcome to J and K's parking garage!")
+            user = input("Do you want to take a ticket, (type 'take') pay for parking (type) 'pay' or leave (type 'leave'? ")
+            if user == 'take':
+                self.take_ticket()
+            elif user == 'pay':
+                self.pay_4_parking()
+            elif user == 'leave':
+                self.leave_garage()
+            elif user == 'quit':
+                return
+            else:
+                print("That's not a valid response. Please try again.")
+
+parking_garage = ParkingGarage()
+
+parking_garage.run_garage()
